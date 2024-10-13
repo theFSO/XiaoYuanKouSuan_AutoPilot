@@ -167,16 +167,20 @@ def click(pos):
     pyautogui.click(pos[0], pos[1], button='left')
 
 def draw_less_than(pos):
-    pyautogui.mouseDown(pos[0], pos[1], button='left', duration=0.002)
-    pyautogui.moveTo(pos[0] - 100, pos[1]+50, duration=0.002)
-    pyautogui.mouseUp(pos[0], pos[1] + 100, button='left', duration=0.002)
     pyautogui.moveTo(pos[0], pos[1], duration=0.002)
+    pyautogui.mouseDown(pos[0], pos[1], button='right', duration=0.002)
+    # pyautogui.moveTo(pos[0] - 100, pos[1]+50, duration=0.002)
+    # pyautogui.mouseUp(pos[0], pos[1] + 100, button='left', duration=0.002)
+    # pyautogui.moveTo(pos[0], pos[1], duration=0.002)
+    pyautogui.mouseUp(pos[0], pos[1], button='right', duration=0.002)
 
 def draw_greater_than(pos):
-    pyautogui.mouseDown(pos[0], pos[1], button='left', duration=0.002)
-    pyautogui.moveTo(pos[0] + 100, pos[1]+50, duration=0.002)
-    pyautogui.mouseUp(pos[0], pos[1] + 100, button='left', duration=0.002)
     pyautogui.moveTo(pos[0], pos[1], duration=0.002)
+    pyautogui.mouseDown(pos[0], pos[1], button='middle', duration=0.002)
+    # pyautogui.moveTo(pos[0] + 100, pos[1]+50, duration=0.002)
+    # pyautogui.mouseUp(pos[0], pos[1] + 100, button='left', duration=0.002)
+    # pyautogui.moveTo(pos[0], pos[1], duration=0.002)
+    pyautogui.mouseUp(pos[0], pos[1], button='middle', duration=0.002)
 
 def locate_playground():
     window = pyautogui.getWindowsWithTitle("Wormhole")[0]
@@ -423,7 +427,8 @@ if __name__ == "__main__":
     # question[1] += windows_rect[1]
     # phone[0] += windows_rect[0]
     # phone[1] += windows_rect[1]
-
+    # draw_pos = [phone[0] + int(phone[2] / 2), phone[1] + int(phone[3] / 2) + 50]
+    # draw_less_than(draw_pos)
     
 
 
